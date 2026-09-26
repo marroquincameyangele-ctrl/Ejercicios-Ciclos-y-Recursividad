@@ -104,6 +104,30 @@ void ejercicio1()
     //Usando operaciones matemáticas simples y condicionales, calcula y 
     //muestra cuántos billetes de 100, 50, 20 y 10 se le deben entregar 
     //para darle la menor cantidad de billetes posibles.
+    int dinero, cuenta100=0, cuenta50=0, cuenta20=0,cuenta10=0;
+    cout<<"Ingrese la cantidad de dinero a retirar: ";
+    cin >> dinero;
+    if (dinero>0 && dinero % 10 == 0){
+        
+        cuenta100=dinero / 100;
+        dinero = dinero % 100;
+        
+        cuenta50 = dinero / 50;
+        dinero = dinero % 50;
+        
+        cuenta20=dinero / 20;
+        dinero = dinero % 20;
+
+        cuenta10 = dinero / 10;
+        dinero = dinero % 10;
+
+        cout << "\nBilletes de 100: " << cuenta100 << endl;
+        cout << "Billetes de 50: " << cuenta50 << endl;
+        cout << "Billetes de 20: " << cuenta20 << endl;
+        cout << "Billetes de 10: " << cuenta10 << endl;
+    }else{
+        cout<<"No se puede si no es multiplo de 10";
+    }
 }
 
 void ejercicio2()

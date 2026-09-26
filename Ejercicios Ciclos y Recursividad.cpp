@@ -176,7 +176,24 @@ void ejercicio3()
 
 void ejercicio4()
 {
-    // Aqui va el ejercicio 4
+    //Pide al usuario que ingrese 10 números enteros y guárdalos en un arreglo. 
+    //Recorre el arreglo para encontrar e imprimir todos los "picos". 
+    //Un pico es un número que es estrictamente mayor que el número a su izquierda
+    //y mayor que el número a su derecha. (Ignora el primer y último elemento para no complicarlo).
+    int numeros[10];
+
+    cout << "Ingrese 10 numeros enteros:\n";
+
+    for (int i = 0; i < 10; i++){
+        cout << "Numero " << i + 1 << ": ";
+        cin >> numeros[i];
+    }
+    cout << "\nPicos encontrados: ";
+    for (int i = 1; i < 9; i++){
+        if (numeros[i] > numeros[i - 1] && numeros[i] > numeros[i + 1]){
+            cout << numeros[i] << " ";
+        }
+    }
 }
 
 void ejercicio5()

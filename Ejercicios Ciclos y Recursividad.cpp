@@ -155,7 +155,23 @@ void ejercicio2()
 
 void ejercicio3()
 {
-    // Aqui va el ejercicio 3
+    //Pide un número N (entre 1 y 9). Usa ciclos anidados (for o while) 
+    //para imprimir en consola una pirámide de números de N pisos. 
+    //Por ejemplo, si N=3, debe verse así: 
+
+    //aqui nomas recicle lo de la tarea anterior, si tenia flojera perdon....
+
+    int col, n, fil;
+    cout << "\nIngrese el numero N (del 1 al 9): ";
+    cin>>n;
+    cout << "" << endl;
+    for (fil = 1; fil <= n; fil++)
+    {   
+        for (col = 1; col<=fil; col++){
+            cout << fil<< " ";
+        }
+        cout << ""<< endl;
+    }
 }
 
 void ejercicio4()

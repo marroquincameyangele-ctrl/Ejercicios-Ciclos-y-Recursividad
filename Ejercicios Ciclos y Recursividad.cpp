@@ -9,8 +9,13 @@ void ejercicio4();
 void ejercicio5();
 void ejercicio6();
 void ejercicio7();
+
 void ejercicio8();
+bool esPalindromo(char palabra[], int inicio, int fin);
+
 void ejercicio9();
+int sumaDigitos(int numero);
+
 void ejercicio10();
 
 int main()
@@ -165,12 +170,16 @@ void ejercicio3()
     cout << "\nIngrese el numero N (del 1 al 9): ";
     cin>>n;
     cout << "" << endl;
+    if (n>=1 && n<=9){
     for (fil = 1; fil <= n; fil++)
     {   
         for (col = 1; col<=fil; col++){
             cout << fil<< " ";
         }
         cout << ""<< endl;
+    }}
+    else{
+        cout<<"tiene que ser del 1 al 9...";
     }
 }
 
@@ -239,7 +248,7 @@ void ejercicio6()
     cin.ignore();
     cin.getline(frase, 100);
 
-    for (int i = 0; i <= 100; i++)
+    for (int i = 0; i <= 99; i++)
     {
         if (frase[i] == 'a' || frase[i] == 'e' ||frase[i] == 'i'|| frase[i] == 'o'||frase[i] == 'u' || frase[i] == 'A' ||frase[i] == 'E'||frase[i] == 'I' ||frase[i] == 'O' || frase[i] == 'U')
         {
@@ -279,17 +288,70 @@ void ejercicio7()
     cout << endl;
 }
 
+bool esPalindromo(char palabra[], int inicio, int fin){
+    if (inicio >= fin){
+        return true;
+    }
+
+    if (palabra[inicio] != palabra[fin]){
+        return false;
+    }
+    return esPalindromo(palabra, inicio + 1, fin - 1);
+}
 void ejercicio8()
 {
-    // Aqui va el ejercicio 8
+    char palabra[100];
+    int longitud = 0;
+    cout << "\nIngrese una palabra: ";
+    cin >> palabra;
+    while (palabra[longitud] != '\0'){
+        longitud++;
+    }
+
+    if (esPalindromo(palabra, 0, longitud - 1)){
+        cout << "Es un palindromo." << endl;
+    }else{
+        cout << "No es un palindromo." << endl;
+    }
 }
 
+
+
+int sumaDigitos(int numero)
+{
+    if (numero < 10){
+        return numero;
+    }
+
+    return (numero % 10) + sumaDigitos(numero / 10);
+}
 void ejercicio9()
 {
-    // Aqui va el ejercicio 9
+    int numero;
+    cout << "\nIngrese un numero entero positivo: ";
+    cin >> numero;
+    if (numero >= 0){
+        cout << "La suma de sus digitos es: "
+             << sumaDigitos(numero) << endl;
+    }else{
+        cout << "El numero debe ser positivo." << endl;
+    }
 }
 
 void ejercicio10()
 {
-    // Aqui va el ejercicio 10
+    char texto[100];
+    cout << "\nIngrese el texto: ";
+    cin.ignore();
+    cin.getline(texto, 100);
+    cout << "Texto comprimido: ";
+    for (int i = 0; texto[i] != '\0'; i++){
+        int contador = 1;
+        while (texto[i] == texto[i + 1] && texto[i + 1] != '\0'){
+            contador++;
+            i++;
+        }
+        cout << texto[i] << contador;
+    }
+    cout << endl;
 }

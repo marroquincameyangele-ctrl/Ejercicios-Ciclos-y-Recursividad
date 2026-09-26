@@ -132,7 +132,25 @@ void ejercicio1()
 
 void ejercicio2()
 {
-    // Aqui va el ejercicio 2
+    //ide al usuario un año. 
+    //Usa condicionales lógicos para determinar si es bisiesto 
+    //(recuerda la regla: es divisible por 4, pero no por 100, a menos que también sea divisible por 400). 
+    //Además, imprime a qué siglo pertenece ese año.
+    int anio;
+    cout<<"Ingrese el año a evaluar: ";
+    cin >> anio;
+
+    if (anio % 100 ==0){
+        cout << "Pertenece al siglo " << anio / 100;
+    }else {
+        cout <<"Pertenece al siglo " <<  (anio / 100) + 1;
+    }
+
+    if ((anio %4 == 0 && anio % 100 != 0) || anio % 400 == 0) {
+        cout<<"Es bisiesto"<< endl;
+    }else{
+        cout<<"No es bisiesto"<< endl;
+    }
 }
 
 void ejercicio3()

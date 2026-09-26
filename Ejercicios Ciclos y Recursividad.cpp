@@ -88,7 +88,7 @@ int main()
 
         if(opcion != 0)
         {
-            system("pause");
+            system("pause");//se lo pedi a chatgpt ahora aprendi a como pausar menus xd
         }
 
     } while(opcion != 0);
@@ -198,17 +198,85 @@ void ejercicio4()
 
 void ejercicio5()
 {
-    // Aqui va el ejercicio 5
+    //ya no quiero repetir instrucciones 
+    double precio, subtotal = 0, descuento = 0, total;
+    int cantidad = 0;
+    cout << "\nIngrese el precio de cada articulo.";
+    cout << "\nIngrese 0 cuando haya terminado.\n";
+
+    do{
+        cout << "Precio del articulo: ";
+        cin >> precio;
+
+        if (precio > 0)
+        {
+            subtotal = subtotal + precio;
+            cantidad++;
+        }
+        else if (precio < 0)
+        {
+            cout << "El precio no puede ser negativo.\n";
+        }
+    }while(precio != 0);
+
+    if (subtotal > 100){
+        descuento = subtotal * 0.10;
+    }
+
+    total = subtotal - descuento;
+    cout << "\n========== TICKET ==========\n";
+    cout << "Articulos comprados: " << cantidad << endl;
+    cout << "Subtotal: $" << subtotal << endl;
+    cout << "Descuento: $" << descuento << endl;
+    cout << "Total a pagar: $" << total << endl;
 }
 
 void ejercicio6()
 {
-    // Aqui va el ejercicio 6
+    char frase[100];
+
+    cout << "\nIngrese una frase: ";
+    cin.ignore();
+    cin.getline(frase, 100);
+
+    for (int i = 0; i <= 100; i++)
+    {
+        if (frase[i] == 'a' || frase[i] == 'e' ||frase[i] == 'i'|| frase[i] == 'o'||frase[i] == 'u' || frase[i] == 'A' ||frase[i] == 'E'||frase[i] == 'I' ||frase[i] == 'O' || frase[i] == 'U')
+        {
+            frase[i] = '*';
+        }
+    }
+
+    cout << "\nFrase censurada: " << frase << endl;
 }
 
 void ejercicio7()
 {
-    // Aqui va el ejercicio 7
+    int numeros[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int k, temp;
+    cout << "\nArreglo original:\n";
+    for (int i = 0; i < 10; i++){
+        cout << numeros[i] << " ";
+    }
+    cout << "\nIngrese K: ";
+    cin >> k;
+    k = k % 10;
+    for (int j = 0; j < k; j++){
+        temp = numeros[9];
+
+        for (int i=9; i > 0; i--){
+            numeros[i] = numeros[i - 1];
+        }
+
+        numeros[0] = temp;
+    }
+
+    cout << "\nArreglo resultante: ";
+    for (int i = 0; i < 10; i++){
+        cout << numeros[i] << " ";
+    }
+
+    cout << endl;
 }
 
 void ejercicio8()
